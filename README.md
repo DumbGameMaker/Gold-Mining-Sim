@@ -26,14 +26,17 @@ use the keyboard shortcut ```Win + r``` and type cmd. press enter
 *if only you knew how to code*
 
 If you want to contribute to the project, make sure you read the issue tracker first.
-also look at the roadmap (WIP) to know what you can help with. Thank you for your support!
+also look at the roadmap (WIP) to know what you can help with. When you push your changes,
+please push to the 'Community' branch. Thank you for your support!
+
+To report bugs, follow the format found in issue #2 and anyone can help you.
 
 
 NOTE: I am a new coder so don't judge me if i make mistakes or if I code in ways that people would try to avoid
 
 **----------------------------------------------------------------------------------------------------------------**
 
-#### Roadmap
+### Roadmap
 
 ##### Bugfixes
 
