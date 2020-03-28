@@ -1,4 +1,4 @@
-### Gold Mining Simulator!
+## Gold Mining Simulator!
 
 *The worst game in history*
 
@@ -27,3 +27,35 @@ use the keyboard shortcut ```Win + r``` and type cmd. press enter
 
 If you want to contribute to the project, make sure you read the issue tracker first.
 also look at the roadmap (WIP) to know what you can help with. Thank you for your support!
+
+
+NOTE: I am a new coder so don't judge me if i make mistakes or if I code in ways that people would try to avoid
+
+**----------------------------------------------------------------------------------------------------------------**
+
+#### Roadmap
+
+##### Bugfixes
+
+- Fix balance getting to -$NaN after you upgrade a lot.
+
+##### Visual
+
+- add a background picture
+- add icons
+
+##### Features
+
+- add prestige counter
+- add system where prestige gives you points based off of your final balance
+  - goldshop with upgrades?
+- add a shop and move all the upgrades into shop
+- allow savegame
+  - sql integration
+  -file download
+
+##### Backend
+
+- add comments for what my code does
+- make easier to deploy
+- make my code cleaner
