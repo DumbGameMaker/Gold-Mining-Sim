@@ -1,14 +1,19 @@
 ### Gold Mining Simulator!
+
 *The worst game in history*
+
 **This game is a game where you click a button to be able to click other buttons...
 When i put it like that it sounds like this game is a disgrace.**
 
 ### How to play
+
 *Easy or hard...*
+
 1. Clone the folder called ``build`` and put it on your desktop
 2. go to ``nodejs.org`` and click the button labled ```12.16.1 LTS``` 
 3. install node.js. in the installer, make sure that npm is selected.
 4. once the installer has finished the powershell phase, you may exit the installation. 
+
 use the keyboard shortcut ```Win + r``` and type cmd. press enter
 5. run the command cd Desktop.
 6. run the command npm install serve
@@ -17,6 +22,8 @@ use the keyboard shortcut ```Win + r``` and type cmd. press enter
 9. play the worst clicker game in history
 
 ### How to contribute to the project
+
 *if only you knew how to code*
+
 If you want to contribute to the project, make sure you read the issue tracker first.
 also look at the roadmap (WIP) to know what you can help with. Thank you for your support!
