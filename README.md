@@ -55,7 +55,7 @@ NOTE: I am a new coder so don't judge me if i make mistakes or if I code in ways
 - add a shop and move all the upgrades into shop
 - allow savegame
   - sql integration
-  -file download
+  - file download
 
 ##### Backend
 
