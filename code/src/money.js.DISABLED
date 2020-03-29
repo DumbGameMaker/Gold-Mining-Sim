@@ -1,0 +1,14 @@
+import React, { useState } from "react";
+import Game, { reset, cashReserves } from "./Game";
+const [warning, setWarning] = useState("OK");
+let hideWarning = true;
+if (cashReserves >= 1000000000000000000000000000000000) {
+  setWarning("Your balance is greater than 1 decillion. More money may make your balance -$NaN. To counteract this, once your balance gets to 2 decillion, your balance will be set to 0 and you will be prestiged.");
+hideWarning = false;
+}
+if (cashReserves >= 2000000000000000000000000000000000) {
+reset();
+  }
+
+export default money;
+export { warning };
