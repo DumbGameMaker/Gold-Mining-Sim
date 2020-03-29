@@ -40,7 +40,7 @@ NOTE: I am a new coder so don't judge me if i make mistakes or if I code in ways
 
 ##### Bugfixes
 
-- Fix balance getting to -$NaN after you upgrade a lot.
+- ~~Fix balance getting to -$NaN after you upgrade a lot.~~ **Fixed!**
 
 ##### Visual
 
@@ -62,3 +62,4 @@ NOTE: I am a new coder so don't judge me if i make mistakes or if I code in ways
 - add comments for what my code does
 - make easier to deploy
 - make my code cleaner
+- rewrite prestige system
