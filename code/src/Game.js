@@ -21,7 +21,7 @@ function Game() {
   const [upgradeBought, letUpgradeBought] = useState(false);
   const [upgradePrice, setUpgradePrice] = useState(600000);
   const [upgradeEff, setUpgradeEff] = useState(17.5);
-  const [boostAmt, setBoostAmt] = useState(150);
+  const [boostAmt, setBoostAmt] = useState(2);
   const [boostPrice, setBoostPrice] = useState(1000000000000);
 
   const [warning, setWarning] = useState("OK");
@@ -40,20 +40,22 @@ function Game() {
   letUpgradeBought(false);
   setUpgradePrice(600000);
   setUpgradeEff(20);
-  setToolEff(getRandomInt(1.875, 5) * 25);
+  setBoostAmt(boostAmt * 75);
+  setToolEff(getRandomInt(1.875, 5) * boostAmt);
   setBoostAmt(boostAmt * 10); }
 function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
-  let hideWarning = true;
+
   if (cashReserves >= 1000000000000000000000000000000000) {
     setWarning("Your balance is greater than 1 decillion. More money may make your balance -$NaN. To counteract this, once your balance gets to 2 decillion, your balance will be set to 0 and you will be prestiged.");
-  hideWarning = false;
+
   }
   if (cashReserves >= 2000000000000000000000000000000000) {
   reset();
+  setWarning("OK");
     }
-
+let prestigeMulti = 0;
   const onClickPrestige = () => {
     if (cashReserves >= boostPrice && cashReserves <= 1200000000000000000) {
       cashReserveSet(0);//reset portion
@@ -75,6 +77,7 @@ function getRandomInt(min, max) {
     } else if (cashReserves > 1200000000000000000) {
       reset();
     }
+
   }
 
   const onClickUseTool = useCallback(() => {
@@ -91,7 +94,7 @@ function getRandomInt(min, max) {
       cashReserveSet(cashReserves - toolPrice);
       setToolPrice(toolPrice * (getRandomInt(15, 25) / 10));
       setBuyTool(toolTier + 1);
-      setToolEff(getRandomInt(2.5, 5));
+      setToolEff(getRandomInt(2.5, 5) * boostAmt);
     }
   };
   const onClickNewMan = () => {
@@ -134,7 +137,7 @@ if (cashReserves >= upgradePrice) {
   return (
     <div className="app" id="Main">
       <p>Game started!</p>
-      <div id="Warning" hidden={hideWarning}>
+      <div id="Warning">
       {warning}
       </div>
       <div id="Game">
