@@ -48,10 +48,10 @@ function getRandomInt(min, max) {
 }
 
   if (cashReserves >= 1000000000000000000000000000000000) {
-    setWarning("Your balance is greater than 1 decillion. More money may make your balance -$NaN. To counteract this, once your balance gets to 2 decillion, your balance will be set to 0 and you will be prestiged.");
+    setWarning("Your balance is greater than 1 decillion. More money may make your balance -$NaN. To counteract this, once your balance gets to 2 undecillion, your balance will be set to 0 and you will be prestiged.");
 
   }
-  if (cashReserves >= 2000000000000000000000000000000000) {
+  if (cashReserves >= 20000000000000000000000000000000000000) {
   reset();
   setWarning("OK");
     }
