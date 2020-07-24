@@ -13,8 +13,7 @@ When i put it like that it sounds like this game is a disgrace.**
 2. go to ``nodejs.org`` and click the button labled ```12.16.1 LTS``` 
 3. install node.js. in the installer, make sure that npm is selected.
 4. once the installer has finished the powershell phase, you may exit the installation. 
-
-use the keyboard shortcut ```Win + r``` and type cmd. press enter
+5. use the keyboard shortcut ```Win + r``` and type cmd. press enter
 5. run the command cd Desktop.
 6. run the command npm install serve
 7. run the command serve -s build.
