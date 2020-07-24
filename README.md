@@ -10,7 +10,7 @@ When i put it like that it sounds like this game is a disgrace.**
 *Easy or hard...*
 
 1. Clone the folder called ``build`` and put it on your desktop
-2. go to ``nodejs.org`` and click the button labled ```12.16.1 LTS``` 
+2. go to ``nodejs.org`` and click the button labled ```12.18.3 LTS``` 
 3. install node.js. in the installer, make sure that npm is selected.
 4. once the installer has finished the powershell phase, you may exit the installation. 
 5. use the keyboard shortcut ```Win + r``` and type cmd. press enter
