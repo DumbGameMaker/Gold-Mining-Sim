@@ -1,13 +1,11 @@
 import React, { useState, useEffect, useCallback } from "react";
-
+//import money, { warning } from "./money";
 const formatMoney = v =>
   v.toLocaleString(undefined, {
     style: "currency",
     currency: "USD"
   });
-function getRandomInt(min, max) {
-  return Math.floor(Math.random() * (max - min + 1)) + min;
-}
+
 function Game() {
   let tool = "pickaxe";
   const [goldAmt, goldAmtCreate] = useState(0);
@@ -23,8 +21,41 @@ function Game() {
   const [upgradeBought, letUpgradeBought] = useState(false);
   const [upgradePrice, setUpgradePrice] = useState(600000);
   const [upgradeEff, setUpgradeEff] = useState(17.5);
-  const [boostAmt, setBoostAmt] = useState(150);
+  const [boostAmt, setBoostAmt] = useState(2);
   const [boostPrice, setBoostPrice] = useState(1000000000000);
+
+  const [warning, setWarning] = useState("OK");
+  function reset() {
+  cashReserveSet(0);
+  setBoostPrice(boostPrice * 20);
+  goldAmtCreate(0);
+  cashReserveSet(0);
+  setCashValueOfGold(0);
+  setBuyTool(1);
+  setToolUnits(1);
+  setToolPrice(250);
+  setHasManager(false);
+  setHasManager2(false);
+  setHideManButton(false);
+  letUpgradeBought(false);
+  setUpgradePrice(600000);
+  setUpgradeEff(20);
+  setBoostAmt(boostAmt * 75);
+  setToolEff(getRandomInt(1.875, 5) * boostAmt);
+  setBoostAmt(boostAmt * 10); }
+function getRandomInt(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+  if (cashReserves >= 1000000000000000000000000000000000) {
+    setWarning("Your balance is greater than 1 decillion. More money may make your balance -$NaN. To counteract this, once your balance gets to 2 undecillion, your balance will be set to 0 and you will be prestiged.");
+
+  }
+  if (cashReserves >= 20000000000000000000000000000000000000) {
+  reset();
+  setWarning("OK");
+    }
+let prestigeMulti = 0;
   const onClickPrestige = () => {
     if (cashReserves >= boostPrice && cashReserves <= 1200000000000000000) {
       cashReserveSet(0);//reset portion
@@ -44,24 +75,11 @@ function Game() {
       setToolEff(toolEff * boostAmt);
       setBoostAmt(boostAmt * 10);
     } else if (cashReserves > 1200000000000000000) {
-      cashReserveSet(0);//reset portion
-      setBoostPrice(boostPrice * 20);
-      goldAmtCreate(0);
-      cashReserveSet(0);
-      setCashValueOfGold(0);
-      setBuyTool(1);
-      setToolUnits(1);
-      setToolPrice(250);
-      setHasManager(false);
-      setHasManager2(false);
-      setHideManButton(false);
-      letUpgradeBought(false);
-      setUpgradePrice(600000);
-      setUpgradeEff(20);//ends reset portion
-      setToolEff(getRandomInt(1.875, 5) * 25);
-      setBoostAmt(boostAmt * 10);
+      reset();
     }
+
   }
+
   const onClickUseTool = useCallback(() => {
     goldAmtCreate(goldAmt + toolUnits);
   }, [goldAmt, toolUnits]);
@@ -76,7 +94,7 @@ function Game() {
       cashReserveSet(cashReserves - toolPrice);
       setToolPrice(toolPrice * (getRandomInt(15, 25) / 10));
       setBuyTool(toolTier + 1);
-      setToolEff(getRandomInt(2.5, 5));
+      setToolEff(getRandomInt(2.5, 5) * boostAmt);
     }
   };
   const onClickNewMan = () => {
@@ -119,6 +137,9 @@ if (cashReserves >= upgradePrice) {
   return (
     <div className="app" id="Main">
       <p>Game started!</p>
+      <div id="Warning">
+      {warning}
+      </div>
       <div id="Game">
         <h3 id="goldAmt">
           You have {Math.round(goldAmt)} units of gold and {formatMoney(cashReserves)}.
@@ -189,3 +210,6 @@ if (cashReserves >= upgradePrice) {
 }
 
 export default Game;
+/*export { reset }
+export { cashReserves }
+*/

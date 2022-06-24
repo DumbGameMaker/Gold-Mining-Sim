@@ -19,3 +19,9 @@
   text-align: center;
   font-family: Arial;
 }
+#Warning {
+  background-color: f00c0c
+}
+#CCLicence {
+  border-width:0
+}
